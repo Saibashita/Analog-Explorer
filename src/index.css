@@ -1,0 +1,122 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 226 30% 98%;
+    --foreground: 226 40% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 226 40% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 226 40% 10%;
+
+    --primary: 230 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 226 20% 90%;
+    --secondary-foreground: 230 85% 30%;
+
+    --muted: 226 20% 95%;
+    --muted-foreground: 226 15% 45%;
+
+    --accent: 250 85% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 226 20% 88%;
+    --input: 226 20% 88%;
+    --ring: 230 85% 55%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 226 40% 10%;
+    --sidebar-primary: 230 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 226 25% 94%;
+    --sidebar-accent-foreground: 230 85% 55%;
+    --sidebar-border: 226 20% 88%;
+    --sidebar-ring: 230 85% 55%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(230 85% 55%), hsl(250 85% 65%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(226 30% 98%));
+    --shadow-card: 0 4px 20px -2px hsl(226 40% 10% / 0.05), 0 0 3px hsl(226 40% 10% / 0.02);
+    --shadow-elevated: 0 10px 30px -5px hsl(226 40% 10% / 0.1), 0 8px 10px -6px hsl(226 40% 10% / 0.05);
+  }
+
+  .dark {
+    --background: 223 48% 8%;
+    --foreground: 226 30% 95%;
+
+    --card: 216 47% 16%;
+    --card-foreground: 226 30% 95%;
+
+    --popover: 216 47% 16%;
+    --popover-foreground: 226 30% 95%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 216 47% 20%;
+    --secondary-foreground: 226 30% 95%;
+
+    --muted: 216 47% 20%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 221 83% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 48% 23%;
+    --input: 214 48% 23%;
+    --ring: 221 83% 53%;
+
+    --sidebar-background: 223 48% 8%;
+    --sidebar-foreground: 226 30% 95%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 216 47% 14%;
+    --sidebar-accent-foreground: 221 83% 53%;
+    --sidebar-border: 214 48% 23%;
+    --sidebar-ring: 221 83% 53%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 83% 45%));
+    --gradient-card: none;
+    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-elevated: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+}
