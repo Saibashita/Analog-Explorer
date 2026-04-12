@@ -2018,15 +2018,16 @@ const topics_core: TopicData[] = [
     category: "Angle Modulation",
     theory: {
       points: [
-        "FM demodulation extracts the instantaneous frequency variation, which carries the message information.",
-        "An ideal FM demodulator is a differentiator followed by an envelope detector.",
-        "The differentiator output: d/dt[A·cos(θ)] = -A·[ωc + kf·m(t)]·sin(θ), whose envelope contains m(t).",
-        "Practical demodulators: slope detector, balanced discriminator, ratio detector, PLL, and zero-crossing detector.",
+        "Frequency Modulation (FM) is an angle modulation technique where the instantaneous frequency of the carrier varies with the message signal. Since FM is constant-amplitude, demodulation requires converting frequency variations back into amplitude variations.",
+        "Method 1 — Frequency-to-Amplitude Conversion (Slope Detection): Uses a differentiator (d/dt) followed by an Envelope Detector. The derivative of an FM signal includes a term proportional to m(t) in its amplitude, so the differentiator converts frequency information into amplitude changes. The Envelope Detector then extracts these amplitude variations to recover the original message.",
+        "Method 2 — Limiter-Discriminator Method: Used when the incoming signal amplitude is not constant (e.g., due to noise). Hard Limiter removes amplitude variations, squaring up the signal to ensure constant amplitude. Bandpass Filter (BPF) extracts the fundamental component, resulting in a clean FM signal with restored constant amplitude.",
+        "Practical demodulators include: slope detector, balanced discriminator, ratio detector, PLL demodulator, and zero-crossing detector.",
       ],
       formulas: [
-        { label: "Differentiator output", expression: "\\dot{\\varphi}(t) = -A[\\omega_c + k_f m(t)]\\sin\\theta(t)" },
-        { label: "Envelope", expression: "E(t) = A[\\omega_c + k_f m(t)]" },
-        { label: "PLL demod output", expression: "e_o(t) = \\frac{k_f}{c} m(t)" },
+        { label: "FM Signal", expression: "\\varphi_{FM}(t) = A\\cos\\left[\\omega_c t + k_f \\int m(\\alpha)\\, d\\alpha\\right]" },
+        { label: "Differentiator Output", expression: "y(t) = \\frac{d}{dt}\\varphi_{FM}(t) = -A\\sin[\\cdots]\\cdot[\\omega_c + k_f m(t)]" },
+        { label: "Envelope Detector Output", expression: "\\text{Output} \\propto A[\\omega_c + k_f m(t)]" },
+        { label: "Recovered Message", expression: "m(t) \\propto \\text{Output} - A\\omega_c" },
       ],
     },
     blockDiagram: {
