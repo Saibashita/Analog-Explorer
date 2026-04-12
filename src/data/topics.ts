@@ -39,7 +39,7 @@ export interface TopicData {
     description: string;
     parameters: { name: string; default: number; min: number; max: number; step: number }[];
   };
-  numericals: NumericalProblem[];
+  numericals?: NumericalProblem[];
 }
 
 // ============================================================
@@ -2199,18 +2199,15 @@ const introTopics: TopicData[] = [
     category: "Introduction",
     theory: {
       points: [
-        "Communication is the process of transferring information from a source to a destination through a channel.",
-        "A communication system consists of three fundamental parts: transmitter, channel, and receiver.",
-        "Analog communication transmits continuous signals, while digital communication uses discrete symbols.",
-        "Key parameters include bandwidth, signal-to-noise ratio (SNR), and channel capacity.",
+        "Communication is the process of transferring information from one point to another through a medium.",
+        "In engineering, it involves sending signals (voice, data, or video) from a transmitter to a receiver with minimal loss and distortion.",
+        "Types of Communication Systems: (1) Analog Communication and (2) Digital Communication.",
+        "Analog Communication: Uses continuous signals that vary smoothly over time. Examples: Human voice, radio signals. Techniques: Amplitude Modulation (AM), Frequency Modulation (FM). Limitation: More susceptible to noise and distortion.",
+        "Digital Communication: Uses discrete signals (0s and 1s). Conversion process includes Sampling, Quantization, and Encoding (PCM). Advantages: Better noise immunity, higher reliability, improved data security. Applications: Mobile networks, Internet.",
       ],
-      formulas: [
-        { label: "Shannon Capacity", expression: "C = B \\log_2(1 + \\text{SNR})" },
-        { label: "SNR (dB)", expression: "\\text{SNR}_{dB} = 10 \\log_{10}\\left(\\frac{P_s}{P_n}\\right)" },
-      ],
+      formulas: [],
     },
     blockDiagram: { description: "Basic communication system block diagram.", svgLabel: "Communication System", blocks: [{ label: "Source", x: 20, y: 60, w: 80, h: 40 }, { label: "Transmitter", x: 140, y: 60, w: 110, h: 40 }, { label: "Channel", x: 290, y: 60, w: 90, h: 40 }, { label: "Receiver", x: 420, y: 60, w: 100, h: 40 }, { label: "Destination", x: 560, y: 60, w: 100, h: 40 }], arrows: [{ from: 0, to: 1 }, { from: 1, to: 2 }, { from: 2, to: 3 }, { from: 3, to: 4 }] },
-    numericals: [{ id: "intro-1", title: "Channel Capacity", difficulty: "Easy", given: "B = 3 kHz, SNR = 30 dB", formula: "C = B log₂(1+SNR)", steps: ["SNR = 10^(30/10) = 1000", "C = 3000 × log₂(1001)", "C ≈ 3000 × 9.97 ≈ 29.9 kbps"], answer: "C ≈ 29.9 kbps" }],
   },
   {
     id: "modulation-need",
@@ -2291,7 +2288,6 @@ const noiseTopics: TopicData[] = [
       formulas: [
         { label: "Thermal Noise", expression: "N = kTB" },
         { label: "Noise Figure", expression: "F = \\frac{\\text{SNR}_{in}}{\\text{SNR}_{out}}" },
-        { label: "Friis Formula", expression: "F_{total} = F_1 + \\frac{F_2 - 1}{G_1} + \\frac{F_3 - 1}{G_1 G_2} + \\cdots" },
       ],
     },
     blockDiagram: { description: "Noise in a cascaded system.", svgLabel: "Noise Analysis", blocks: [{ label: "Source", x: 20, y: 60, w: 80, h: 40 }, { label: "Stage 1 (F₁,G₁)", x: 140, y: 60, w: 130, h: 40 }, { label: "Stage 2 (F₂,G₂)", x: 310, y: 60, w: 130, h: 40 }, { label: "Output", x: 480, y: 60, w: 80, h: 40 }], arrows: [{ from: 0, to: 1 }, { from: 1, to: 2 }, { from: 2, to: 3 }] },

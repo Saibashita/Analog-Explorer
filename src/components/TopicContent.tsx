@@ -37,6 +37,7 @@ export function TopicContent({ topic }: Props) {
         {tabs.filter(tab => {
           if (tab.id === "simulation" && !topic.simulation) return false;
           if (tab.id === "circuit" && !topic.circuitDiagram) return false;
+          if (tab.id === "numericals" && (!topic.numericals || topic.numericals.length === 0)) return false;
           return true;
         }).map((tab) => {
           const Icon = tab.icon;
