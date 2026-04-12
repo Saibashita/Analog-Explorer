@@ -13,6 +13,7 @@ const faqResponses: Record<string, string> = {
   "dsb": "DSB-SC (Double Sideband Suppressed Carrier) φ(t) = m(t)cos(ωct). Saves carrier power but requires coherent detection using carrier recovery (PLL/Costas loop). BW = 2fm.",
   "ssb": "SSB (Single Sideband) transmits only one sideband (USB/LSB). BW = fm (saves 50% BW). Generated using phase shift (Hilbert transform) or selective filtering methods.",
   "vsb": "VSB (Vestigial Sideband) transmits one full sideband and a vestige of the other. It is a compromise between SSB and DSB, used for TV broadcasting. BW = B + f_vestige.",
+  "qam": "QAM (Quadrature Amplitude Modulation) transmits two independent signals using two carriers in quadrature (sine and cosine). It has double the spectral efficiency of DSB. BW = 2B. Requires perfect phase locking to avoid crosstalk.",
   "noise": "Communication noise includes Thermal (N = kTB) and Shot noise. Noise figure F = SNR_in / SNR_out. Noise power depends on bandwidth (No = NB).",
   "pll": "PLL is a feedback system locking VCO to input phase. Key formulas: Steady-state error θe = arcsin(Δω/KvKd). Loop Gain K = Kd·Kv. Used for FM demodulation and carrier recovery.",
   "snr": "SNR = Signal Power / Noise Power (So/No). Noise is modeled as AWGN with constant PSD (No = N×B). In DSB-SC, the output SNR is approx. equal to input SNR. Increasing bandwidth increases noise power, which can degrade SNR.",
