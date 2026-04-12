@@ -2226,9 +2226,7 @@ const introTopics: TopicData[] = [
         "It shifts the signal spectrum to a higher frequency range suitable for transmission.",
         "Types of modulation: Amplitude (AM), Frequency (FM), and Phase (PM).",
       ],
-      formulas: [
-        { label: "Antenna length", expression: "L = \\frac{\\lambda}{4} = \\frac{c}{4f}" },
-      ],
+      formulas: [],
     },
     blockDiagram: { description: "Modulation overview.", svgLabel: "Modulation Types", blocks: [{ label: "Baseband", x: 20, y: 60, w: 90, h: 40 }, { label: "Modulator", x: 160, y: 60, w: 100, h: 40 }, { label: "RF Signal", x: 310, y: 60, w: 100, h: 40 }], arrows: [{ from: 0, to: 1 }, { from: 1, to: 2 }] },
     numericals: [{ id: "mod-1", title: "Antenna Length Calculation", difficulty: "Easy", given: "Audio signal f = 5 kHz, speed of light c = 3×10⁸ m/s", formula: "L = c/(4f)", steps: ["L = 3×10⁸ / (4 × 5000)", "L = 15000 m = 15 km (impractical!)"], answer: "L = 15 km — hence modulation is needed" }],
