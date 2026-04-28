@@ -62,14 +62,7 @@ To run this project locally, follow these steps:
    npm run build
    ```
 
----
 
-## 📝 Author
-
-**Saibashita Pamarthi**
-- GitHub: [@Saibashita](https://github.com/Saibashita)
 - Vercel: [Analog Explorer](https://analog-explorer-main.vercel.app)
-
----
 
 *Made with ❤️ for Analog Communication enthusiasts.*
